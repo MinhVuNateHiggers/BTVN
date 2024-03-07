@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+double n;
+int a[111];
+int32_t main()
+{
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> a[i];
+    }
+    int duong = 0, am = 0, ko = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        if (a[i] > 0)
+        {
+            duong++;
+        }
+        else if (a[i] < 0)
+        {
+            am++;
+        }
+        else
+        {
+            ko++;
+        }
+    }
+    cout << fixed << setprecision(6) << duong/n << endl << am/n << endl << ko/n ;
+}
