@@ -1,0 +1,23 @@
+bool check1(vector<int> a, int i){
+    for(auto x : a){
+        if(i % x != 0) return false;
+    }
+    return true;
+}
+
+bool check2(vector<int> a, int i){
+    for(auto x : a){
+        if(x % i != 0) return false;
+    }
+    return true;
+}
+
+int getTotalX(vector<int> a, vector<int> b) {
+    int cnt = 0;
+    sort(a.begin(), a.end());
+    sort(b.begin(), b.end());
+    for(int i = a[a.size() - 1]; i <= b[0]; i++){
+        if(check1(a, i) && check2(b, i)) cnt++;
+    }
+    return cnt;
+}
