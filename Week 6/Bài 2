@@ -1,0 +1,52 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <string>
+using namespace std;
+
+class Student 
+{
+    private:
+    int age, standard;
+    string firstName, lastName;
+    
+    public:
+    void set_age(int a) { age = a; }
+    void set_standard(int s) { standard = s; }
+    void set_firstName(string fn) { firstName = fn; }
+    void set_lastName(string ln) { lastName = ln; }
+    
+    int get_age() { return age; }
+    int get_standard() { return standard; }
+    string get_firstName() { return firstName; }
+    string get_lastName() { return lastName; }
+    
+    string convert()
+    {
+        string a = to_string(age); string s = to_string(standard);
+            string temp = a + "," + firstName + "," + lastName + "," + s;
+            return temp;
+    }
+};
+
+int main() {
+    int age, standard;
+    string firstName, lastName;
+    cin >> age >> firstName >> lastName >> standard;
+    
+    Student st;
+    st.set_age(age);
+    st.set_standard(standard);
+    st.set_firstName(firstName);
+    st.set_lastName(lastName);
+    
+    cout << st.get_age() << endl;
+    cout << st.get_lastName() << ", " << st.get_firstName() << endl;
+    cout << st.get_standard() << endl;
+    cout << endl;
+    cout << st.convert();
+    
+    return 0;
+}
